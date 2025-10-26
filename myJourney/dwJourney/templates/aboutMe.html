@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About {{ about.name }}</title>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+<header>
+<h1>About Me</h1>
+<nav>
+  <ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'about_me' %}" class="active">About Me</a></li>
+  </ul>
+</nav>
+</header>
+
+<main>
+{% if about %}
+<section class="about">
+  {% if about.profile_image %}
+  <img src="{% static 'images/photo_2025-10-26_12-40-22.jpg' %}" alt="{{ about.name }}" class="about-img">
+  {% endif %}
+
+  <h2>Introduction</h2>
+  <p>{{ about.intro }}</p>
+
+  {% if about.hobbies.all %}
+  <h2>Hobbies</h2>
+  <ul>
+    {% for hobby in about.hobbies.all %}
+      <li>{{ hobby.title }}{% if hobby.description %}: {{ hobby.description }}{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if about.skills.all %}
+  <h2>Skills</h2>
+  <ul>
+    {% for skill in about.skills.all %}
+      <li>{{ skill.name }} ({{ skill.proficiency }})</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
+{% else %}
+<p>No About Me content added yet.</p>
+{% endif %}
+</main>
+
+<footer>
+<p>© 2025 Dorji Wangmo. All rights reserved.</p>
+</footer>
+</body>
+</html>

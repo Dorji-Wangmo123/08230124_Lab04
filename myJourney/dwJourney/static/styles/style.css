@@ -1,0 +1,236 @@
+/* ==========================================================
+   GLOBAL STYLES — applies to all pages
+========================================================== */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(135deg, #4b79a1, #283e51);
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 0.2rem;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* ===== Main Section (Shared) ===== */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #283e51;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================
+   INDEX PAGE STYLES — My Learning Journey
+========================================================== */
+.topics h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #283e51;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #4b79a1;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* ===== Topic Cards ===== */
+.topic {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.topic:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.topic h3 {
+  color: #4b79a1;
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.topic p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ===== Challenges List ===== */
+.topic ul {
+  list-style: none;
+  padding: 0;
+}
+
+.topic ul li {
+  background: #eef3f8;
+  padding: 0.6rem 1rem;
+  border-left: 4px solid #4b79a1;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.topic ul li:hover {
+  background: #e0ebf5;
+}
+
+/* ==========================================================
+   ABOUT ME PAGE STYLES — Personal Information, Hobbies & Skills
+========================================================== */
+.about {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center; /* Ensures image & headings are centered */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Profile Image ===== */
+.about-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto; /* UPDATED: Centers the image horizontally */
+  display: block; /* UPDATED: Ensures image is centered in its container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border: 4px solid #4b79a1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Section Headings ===== */
+.about h2 {
+  color: #283e51;
+  border-bottom: 2px solid #4b79a1;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+}
+
+/* ===== Introduction Paragraph ===== */
+.about p {
+  font-size: 1rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  color: #444;
+  text-align: justify; /* OPTIONAL: makes intro text cleaner */
+}
+
+/* ===== Lists (Hobbies & Skills) ===== */
+.about ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.about ul li {
+  background: #eef3f8;
+  margin: 0.5rem auto;
+  padding: 0.7rem 1rem;
+  border-left: 4px solid #4b79a1;
+  width: 80%;
+  border-radius: 6px;
+  text-align: left;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.about ul li:hover {
+  background: #e0ebf5;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  .topic,
+  .about {
+    padding: 1rem;
+  }
+
+  .about-img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+  }
+
+  .about ul li {
+    width: 95%;
+  }
+}

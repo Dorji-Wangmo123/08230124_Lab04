@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Learning Journey</title>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+<header>
+<h1>My Learning Journey</h1>
+<nav>
+  <ul>
+    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+    <li><a href="{% url 'about_me' %}">About Me</a></li>
+  </ul>
+</nav>
+</header>
+
+<main>
+<section class="topics">
+  <h2>Topics I Learned</h2>
+  {% for topic in topics %}
+    <div class="topic">
+      <h3>{{ topic.title }}</h3>
+      <p>{{ topic.description }}</p>
+      {% if topic.challenges.all %}
+      <ul>
+        {% for challenge in topic.challenges.all %}
+          <li>{{ challenge.description }} ({{ challenge.difficulty_level }})</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  {% empty %}
+    <p>No topics added yet.</p>
+  {% endfor %}
+</section>
+</main>
+
+<footer>
+<p>© 2025 Dorji Wangmo. All rights reserved.</p>
+</footer>
+</body>
+</html>
